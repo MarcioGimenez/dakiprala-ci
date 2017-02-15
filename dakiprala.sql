@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 15/02/2017 às 19:57
+-- Tempo de geração: 15/02/2017 às 21:04
 -- Versão do servidor: 5.7.17-0ubuntu0.16.04.1
 -- Versão do PHP: 5.6.29-1+deb.sury.org~xenial+1
 
@@ -96,6 +96,32 @@ CREATE TABLE `usuarios` (
   `data_atualizacao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `usuarios_admin`
+--
+
+CREATE TABLE `usuarios_admin` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `cpf` varchar(20) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  `status` int(11) NOT NULL,
+  `nivel` int(11) NOT NULL,
+  `endereco` varchar(255) NOT NULL,
+  `data_atualizado` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `usuarios_admin`
+--
+
+INSERT INTO `usuarios_admin` (`id`, `nome`, `cpf`, `email`, `senha`, `status`, `nivel`, `endereco`, `data_atualizado`) VALUES
+(2, 'Rosi Linda', '123.456.789', 'rosi.rnr@gmail.com', 'teste', 1, 1, 'Rua Jarnaúba', '2017-02-15 23:02:06'),
+(15, 'Marcio gimenez', '123.456.789-77', 'marciogimenez1093@gmail.com', '123456789', 1, 1, 'r: judith pereira de oliveira', '2017-02-05 06:40:18');
+
 --
 -- Índices de tabelas apagadas
 --
@@ -126,6 +152,12 @@ ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices de tabela `usuarios_admin`
+--
+ALTER TABLE `usuarios_admin`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de tabelas apagadas
 --
 
@@ -149,6 +181,11 @@ ALTER TABLE `locais`
 --
 ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de tabela `usuarios_admin`
+--
+ALTER TABLE `usuarios_admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
