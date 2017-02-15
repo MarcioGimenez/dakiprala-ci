@@ -262,6 +262,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		.btn-primary:hover {
 			background-color: #01c9eb !important;
 		}
+		.btn-primary-branco:hover{
+			color: #000;
+		}
+		.btn-primary-branco{
+			color: #fff;
+			background-color: #01C9EB;
+		}
 		.btn-social{
 			color: #fff;
 			margin: 5px;
@@ -387,7 +394,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="sociais text-center">
 						<a href="#"><i class="fa fa-facebook-square fa-2x btn-social" aria-hidden="true"></i></a>
 						<a href="#"><i class="fa fa-instagram fa-2x btn-social" aria-hidden="true"></i></div></a>
-						<div class="login-btn"><a href="#">Login do Anunciante</a> | <a href="#">Login do Aventureiro</a></div></div>
+						<div class="login-btn"><a href="#"  data-toggle="modal" data-target="#modal_login_anunciante">Login do Anunciante</a> | <a href="#" data-toggle="modal" data-target="#modal_login_aventureiro">Login do Aventureiro</a></div></div>
 					</div>
 				</div>
 			</header>
@@ -418,4 +425,71 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 				</div>
 			</div>
-			
+
+
+			<!-- Modal Login Aventureiro-->
+			<div class="modal fade" id="modal_login_aventureiro" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title text-center" id="myModalLabel">Por favor, Faça o Login</h4>
+						</div>
+						<div class="modal-body">
+							<div class="row">
+								<div class="col-md-8 col-md-offset-2 text-center">
+									<form method="post" action="" id="form_login_aventureiro">
+										<div id="form-email" class="form-group">
+											<input type="email" class="form-control" id="email-login-aventureiro" name="email-login-aventureiro" placeholder="E-Mail" required="">
+										</div>
+
+										<div id="form-senha" class="form-group ">
+											<input type="password" class="form-control" id="senha-login-aventureiro" name="senha-login-aventureiro" placeholder="Senha" required="">
+										</div>
+
+										<button type="submit" name="entrar" class="btn btn-primary-branco btn-block">Entrar</button>
+
+									</form> 
+
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Modal Login Anunciante-->
+			<div class="modal fade" id="modal_login_anunciante" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title text-center" id="myModalLabel">Por favor, Faça o Login</h4>
+						</div>
+						<div class="modal-body">
+							<div class="row">
+								<div class="col-md-8 col-md-offset-2 text-center">
+									<form method="post" action="" id="form_login_anunciante">
+										<div id="form-email" class="form-group">
+											<input type="email" class="form-control" id="email-login-anunciante" name="email-login-anunciante" placeholder="E-Mail" required="">
+										</div>
+
+										<div id="form-senha" class="form-group ">
+											<input type="password" class="form-control" id="senha-login-anunciante" name="senha-login-anunciante" placeholder="Senha" required="">
+										</div>
+
+										<button type="submit" name="entrar" class="btn btn-primary-branco btn-block">Entrar</button>
+
+									</form> 
+
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+
+						</div>
+					</div>
+				</div>
+			</div>
