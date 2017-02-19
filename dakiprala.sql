@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 15/02/2017 às 21:04
+-- Tempo de geração: 19/02/2017 às 01:30
 -- Versão do servidor: 5.7.17-0ubuntu0.16.04.1
 -- Versão do PHP: 5.6.29-1+deb.sury.org~xenial+1
 
@@ -56,20 +56,19 @@ CREATE TABLE `fotos_locais` (
 
 CREATE TABLE `locais` (
   `id` int(11) NOT NULL,
-  `nome` varchar(255) NOT NULL,
+  `titulo` varchar(255) NOT NULL,
   `tipo` char(20) NOT NULL COMMENT 'estado,cidade,bairro,estabelecimento',
   `foto_quadrada` varchar(255) NOT NULL COMMENT '210x140',
-  `alt_foto_quadrada` varchar(150) NOT NULL,
+  `titulo_foto` varchar(150) NOT NULL,
   `foto_retangular` varchar(255) NOT NULL COMMENT '1100 x 350',
-  `alt_foto_retangular` varchar(150) NOT NULL,
   `pontuacao` int(1) NOT NULL COMMENT '0 até 5',
   `descricao` text NOT NULL,
   `latitude` varchar(50) NOT NULL,
   `longitude` varchar(50) NOT NULL,
   `titulo_google` varchar(70) NOT NULL,
   `descricao_google` varchar(160) NOT NULL,
-  `titulo_face` varchar(70) NOT NULL,
-  `descricao_face` varchar(160) NOT NULL,
+  `titulo_facebook` varchar(70) NOT NULL,
+  `descricao_facebook` varchar(160) NOT NULL,
   `imagem_face` varchar(255) NOT NULL,
   `status` int(1) NOT NULL COMMENT '0 excluido, 1 ativo, 2 inativo',
   `data_cadastro` date NOT NULL,
@@ -113,14 +112,6 @@ CREATE TABLE `usuarios_admin` (
   `endereco` varchar(255) NOT NULL,
   `data_atualizado` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Fazendo dump de dados para tabela `usuarios_admin`
---
-
-INSERT INTO `usuarios_admin` (`id`, `nome`, `cpf`, `email`, `senha`, `status`, `nivel`, `endereco`, `data_atualizado`) VALUES
-(2, 'Rosi Linda', '123.456.789', 'rosi.rnr@gmail.com', 'teste', 1, 1, 'Rua Jarnaúba', '2017-02-15 23:02:06'),
-(15, 'Marcio gimenez', '123.456.789-77', 'marciogimenez1093@gmail.com', '123456789', 1, 1, 'r: judith pereira de oliveira', '2017-02-05 06:40:18');
 
 --
 -- Índices de tabelas apagadas
@@ -175,7 +166,7 @@ ALTER TABLE `fotos_locais`
 -- AUTO_INCREMENT de tabela `locais`
 --
 ALTER TABLE `locais`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
@@ -185,7 +176,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `usuarios_admin`
 --
 ALTER TABLE `usuarios_admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

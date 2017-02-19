@@ -26,7 +26,7 @@
       <ul class="nav nav-sidebar">
         <li class="active"><a href="<?=base_url()?>admin/dashboard">Dashboard<span class="sr-only">(atual)</span></a></li>
         <li><a href="<?=base_url()?>admin/usuario">Usuários</a></li>
-        
+        <li><a href="<?=base_url()?>admin/local">Locais</a></li>
       </ul>
       
     </div>
