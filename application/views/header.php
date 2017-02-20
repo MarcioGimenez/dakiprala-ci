@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Daki pra Lá</title>
-
+	<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 	<!-- Bootstrap -->
 	<link href="<?=base_url()?>assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="<?=base_url()?>assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
