@@ -1,4 +1,5 @@
 <?php
+ini_set("upload_max_filesize", "20M");
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Local extends CI_Controller {
@@ -10,28 +11,21 @@ class Local extends CI_Controller {
 			redirect('admin/login', 'refresh');
 		}
 	}
-	
-
 
 	public function index()	{	
 	// pega todos os locais do bd e passa para a view
-			
+
 		$data['locais']=$this->local_model->get_locais();
 		
 		$this->load->view('admin/includes/header');
 		$this->load->view('admin/includes/menu');
 		$this->load->view('admin/lista_locais',$data);
-		$this->load->view('admin/includes/footer');
-
-		
+		$this->load->view('admin/includes/footer');		
 	}
 
 	public function cadastro(){
 		if($_POST){
-			//print_r($_FILES);
-			//var_dump($_POST);
-
-			//exit;
+			
 
 			$data['titulo'] = $this->input->post('titulo');
 			$data['tipo'] = $this->input->post('tipo');			
@@ -48,7 +42,7 @@ class Local extends CI_Controller {
 
 			//realiza validação dos dados recebidos
 			$this->load->library('form_validation');
-			$this->form_validation->set_rules('titulo','Titulo','trim|required|min_length[10]');
+			$this->form_validation->set_rules('titulo','Titulo','trim|required|min_length[4]');
 			$this->form_validation->set_rules('latitude','Latitude','trim|required|min_length[5]');
 			$this->form_validation->set_rules('longitude','Longitude','trim|required|min_length[5]');
 			$this->form_validation->set_rules('titulo_foto','Titulo da foto','trim|required|min_length[10]');
@@ -59,6 +53,7 @@ class Local extends CI_Controller {
 			$this->form_validation->set_rules('descricao_google','Descrição do Google','trim|required|min_length[40]');
 			$this->form_validation->set_rules('descricao_facebook','Descrição do Facebook','trim|required|min_length[40]');
 
+			
 			// verifica a validação
 			if($this->form_validation->run() == FALSE){
 				if(validation_errors()){
@@ -67,8 +62,11 @@ class Local extends CI_Controller {
 					set_msg('validação ok','success');
 				}	
 			}else{
-				
+				foreach ($_FILES as $key => $arquivo) {
+					move_uploaded_file ( $arquivo['tmp_name'] , $_SERVER['DOCUMENT_ROOT'].'/dakiprala-ci/assets/upload/'.$arquivo['name']);
+				}
 				if($this->local_model->cadastra_local($data)){
+					
 					set_msg('Local cadastrado com sucesso','success');
 					redirect('admin/local', 'refresh');
 
