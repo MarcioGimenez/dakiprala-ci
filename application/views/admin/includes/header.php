@@ -8,27 +8,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <!--<link rel="icon" href="../../favicon.ico">-->
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--<link rel="icon" href="../../favicon.ico">-->
 
-  <title>Admin</title>
+    <title>Admin</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="<?=base_url()?>assets/admin/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="<?=base_url()?>assets/admin/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <link href="<?=base_url()?>assets/admin/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="<?=base_url()?>assets/admin/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="<?=base_url()?>assets/admin/css/dashboard.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="<?=base_url()?>assets/admin/css/dashboard.css" rel="stylesheet">
 
-  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-  <script src="<?=base_url()?>assets/admin/js/ie-emulation-modes-warning.js"></script>
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="<?=base_url()?>assets/admin/js/ie-emulation-modes-warning.js"></script>
 
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -56,17 +56,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   locale file as mentioned below -->
 
   <script src="<?=base_url()?>assets/bootstrap-fileinput/js/locales/pt.js"></script>
-<!-- include summernote css/js-->
-<link href="<?=base_url()?>assets/summernote/summernote.css" rel="stylesheet">
-<script src="<?=base_url()?>assets/summernote/summernote.min.js"></script>
+  <!-- include summernote css/js-->
+  <link href="<?=base_url()?>assets/summernote/summernote.css" rel="stylesheet">
+  <script src="<?=base_url()?>assets/summernote/summernote.min.js"></script>
+  <style type="text/css">
+    .col-centered {
+      display:inline-block;
+      float:none;
+      /* reset the text-align */
+      text-align:left;
+      /* inline-block space fix */
+      margin-right:-4px;
+    }
+    .row-centered {
+      text-align:center;
+    }
+  </style>
 </head>
 
 <body>
- <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-  <?php
-  if($msg=get_msg()):
-    echo '<div class="msg-box">'.$msg.'</div>';
-  endif;
-  ?>
+ <div class="row row-centered">
+  <div class="col-xs-5 main col-centered">
+    <?php
+    if($msg=get_msg()):
+      echo '<div class="msg-box text-center">'.$msg.'</div>';
+    endif;
+    ?>
+  </div>
 </div>
 

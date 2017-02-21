@@ -24,8 +24,7 @@ class Local extends CI_Controller {
 	}
 
 	public function cadastro(){
-		if($_POST){
-			
+		if($_POST){			
 
 			$data['titulo'] = $this->input->post('titulo');
 			$data['tipo'] = $this->input->post('tipo');			
@@ -63,8 +62,13 @@ class Local extends CI_Controller {
 				}	
 			}else{
 				foreach ($_FILES as $key => $arquivo) {
+					$data[$key] = base_url().'assets/upload/'.$arquivo['name'];
 					move_uploaded_file ( $arquivo['tmp_name'] , $_SERVER['DOCUMENT_ROOT'].'/dakiprala-ci/assets/upload/'.$arquivo['name']);
 				}
+				
+				unset($data['files']);
+				$data['data_cadastro'] = date('Y-m-d');
+				$data['idusuario'] = $this->session->userdata('id');
 				if($this->local_model->cadastra_local($data)){
 					
 					set_msg('Local cadastrado com sucesso','success');

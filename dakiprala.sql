@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 19/02/2017 às 01:30
+-- Tempo de geração: 21/02/2017 às 14:32
 -- Versão do servidor: 5.7.17-0ubuntu0.16.04.1
--- Versão do PHP: 5.6.29-1+deb.sury.org~xenial+1
+-- Versão do PHP: 5.6.30-1+deb.sury.org~xenial+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -56,6 +56,7 @@ CREATE TABLE `fotos_locais` (
 
 CREATE TABLE `locais` (
   `id` int(11) NOT NULL,
+  `idusuario` int(11) NOT NULL,
   `titulo` varchar(255) NOT NULL,
   `tipo` char(20) NOT NULL COMMENT 'estado,cidade,bairro,estabelecimento',
   `foto_quadrada` varchar(255) NOT NULL COMMENT '210x140',
@@ -69,7 +70,7 @@ CREATE TABLE `locais` (
   `descricao_google` varchar(160) NOT NULL,
   `titulo_facebook` varchar(70) NOT NULL,
   `descricao_facebook` varchar(160) NOT NULL,
-  `imagem_face` varchar(255) NOT NULL,
+  `foto_facebook` varchar(255) NOT NULL,
   `status` int(1) NOT NULL COMMENT '0 excluido, 1 ativo, 2 inativo',
   `data_cadastro` date NOT NULL,
   `data_atualizacao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -166,7 +167,7 @@ ALTER TABLE `fotos_locais`
 -- AUTO_INCREMENT de tabela `locais`
 --
 ALTER TABLE `locais`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
@@ -176,7 +177,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `usuarios_admin`
 --
 ALTER TABLE `usuarios_admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

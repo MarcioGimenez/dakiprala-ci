@@ -13,14 +13,15 @@ class Usuario_model extends CI_Model {
 	function valida_usuario() {         
 		$this->db->where('email', $this->input->post('email'));          
 		$this->db->where('senha', $this->input->post('senha'));     
-  		$this->db->where('status', 1); 
+		$this->db->where('status', 1); 
 
 		$query = $this->db->get('usuarios_admin');  
-		  
+
 		if ($query->num_rows() >= 1) { 
+			$this->session->set_userdata(array('id' => $query->row()->id));
 			set_msg('Login efetuado com sucesso!','success');                
 			return true; 
-			   
+
 		}else{
 			set_msg('Erro ao fazer o login','danger');       
 		}    
@@ -29,7 +30,7 @@ class Usuario_model extends CI_Model {
 	function logado() {         
 		$logado = $this->session->userdata('logado');         
 		if (!isset($logado) || $logado != true) {
-		set_msg('Você precisa fazer o login para ter acesso ao sistema','danger');
+			set_msg('Você precisa fazer o login para ter acesso ao sistema','danger');
 			return false;    
 			//return true;   
 		}else{
