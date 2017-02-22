@@ -115,7 +115,7 @@ class Local extends CI_Controller {
 
 				if($this->local_model->alterar_local($data,$id)){
 					
-					set_msg('Usuário alterado com sucesso','success');
+					set_msg('Local alterado com sucesso','success');
 					redirect('admin/local', 'refresh');
 
 				}
@@ -135,14 +135,14 @@ class Local extends CI_Controller {
 	public function excluir($id=null){
 
 		if($this->local_model->remove_local($id)){
-			set_msg('Usuário excluído com sucesso','success');
+			set_msg('Local excluído com sucesso','success');
 		}else{
 			set_msg('Erro ao excluir local','danger');
 		}
 		$data['locais']=$this->local_model->get_locais();
 		$this->load->view('admin/includes/header');
 		$this->load->view('admin/includes/menu');
-		$this->load->view('admin/lista_local',$data);
+		$this->load->view('admin/lista_locais',$data);
 		$this->load->view('admin/includes/footer');
 	}
 }
