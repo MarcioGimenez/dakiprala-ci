@@ -1,3 +1,4 @@
+
 			<!-- inicio slider -->
 			<section id="slider">
 				<div class="container slider">
@@ -44,34 +45,22 @@
 			<!-- inicio locais -->
 			<section id="locais">
 				<div class="container locais text-center">
+					<?php 
+						foreach ($estados as $key => $estado) {
+					
+					?>
+
 					<div class="col-md-3 col-sm-6 col-xs-12 local">
 						<div class="foto">
-							<img src="http://www.arycom.com/uploads/locais/contato_sp.jpg" class="img-responsive" />
+							<img src="<?=$estado->foto_quadrada?>" width="200" height="130" />
 						</div>
-						<h2>Rio de Janeiro</h2>
-						<p>Balela Balela Balela balela balela balela balela balela balela balela balela balela balela balela</p>
+						<h2><?=$estado->titulo?></h2>
+						<p><?=strip_tags (substr($estado->descricao,0,100));?></p>
 					</div>
-					<div class="col-md-3 col-sm-6 col-xs-12 local">
-						<div class="foto">
-							<img src="http://www.pousadalagoaazul.net/turismo/1_juqueriquere2%5B1%5D.jpg" class="img-responsive" />
-						</div>
-						<h2>Minas Gerais</h2>
-						<p>Balela Balela Balela balela balela balela balela balela balela balela balela balela balela balela</p>
-					</div>
-					<div class="col-md-3 col-sm-6 col-xs-12 local">
-						<div class="foto">
-							<img src="http://www.arycom.com/uploads/locais/contato_sp.jpg" class="img-responsive" />
-						</div>
-						<h2>Alagoas</h2>
-						<p>Balela Balela Balela balela balela balela balela balela balela balela balela balela balela balela</p>
-					</div>
-					<div class="col-md-3 col-sm-6 col-xs-12 local">
-						<div class="foto">
-							<img src="http://www.pousadalagoaazul.net/turismo/1_juqueriquere2%5B1%5D.jpg" class="img-responsive" align="center" />
-						</div>
-						<h2>São Paulo</h2>
-						<p>Balela Balela Balela balela balela balela balela balela balela balela balela balela balela balela</p>
-					</div>
+
+					<?php } ?>
+					
+				
 				</div>
 			</section>
 			<!-- fim locais -->
