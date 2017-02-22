@@ -19,10 +19,10 @@
                                    <div class="form-group">
                                          <label for="tipo">Tipo:</label>
                                          <select id="tipo" name="tipo" class="form-control">
-                                           <option value="estado" checked="checked">Estado</option>
-                                           <option value="cidade">Cidade</option>
-                                           <option value="bairro">Bairro</option>
-                                           <option value="estabelecimento">Estabelecimento</option>
+                                           <option value="estado" <?=($local[0]->tipo=='estado')?'selected="selected"':''?>>Estado</option>
+                                           <option value="cidade" <?=($local[0]->tipo=='cidade')?'selected="selected"':''?>>Cidade</option>
+                                           <option value="bairro" <?=($local[0]->tipo=='bairro')?'selected="selected"':''?>>Bairro</option>
+                                           <option value="estabelecimento" <?=($local[0]->tipo=='estabelecimento')?'selected="selected"':''?>>Estabelecimento</option>
                                      </select>
                                </div>
                          </div>
@@ -30,8 +30,8 @@
                                <div class="form-group">
                                     <label for="status">Status:</label>
                                     <select id="status" name="status" class="form-control">
-                                         <option value="1" checked="checked">Ativo</option>
-                                         <option value="0">Inativo</option>
+                                         <option value="1" <?=($local[0]->status==1)?'selected="selected"':''?>>Ativo</option>
+                                         <option value="0" <?=($local[0]->status==0)?'selected="selected"':''?>>Inativo</option>
                                    </select>
                              </div>
                        </div>
