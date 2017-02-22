@@ -91,18 +91,32 @@ class Local extends CI_Controller {
 		
 		if($_POST){
 			// recupera dados POST
-			
-			$data['nome'] = $this->input->post('nome');
-			$data['cpf'] = $this->input->post('cpf');
-			$data['endereco'] = $this->input->post('endereco');
-			$data['nivel'] = $this->input->post('nivel');
-			$data['email'] = $this->input->post('email');
+			$data['titulo'] = $this->input->post('titulo');
+			$data['tipo'] = $this->input->post('tipo');			
 			$data['status'] = $this->input->post('status');
+			$data['latitude'] = $this->input->post('latitude');
+			$data['longitude'] = $this->input->post('longitude');			
+			$data['titulo_foto'] = $this->input->post('titulo_foto');
+			$data['descricao'] = $this->input->post('descricao');
+			$data['titulo_google'] = $this->input->post('titulo_google');
+			$data['titulo_facebook'] = $this->input->post('titulo_facebook');
+			$data['descricao_google'] = $this->input->post('descricao_google');
+			$data['descricao_facebook'] = $this->input->post('descricao_facebook');
+
 
 			//realiza validação dos dados recebidos
 			$this->load->library('form_validation');
-			$this->form_validation->set_rules('nome','Nome','trim|required|min_length[5]');
-			$this->form_validation->set_rules('email','Email','trim|required|valid_email');
+			$this->form_validation->set_rules('titulo','Titulo','trim|required|min_length[4]');
+			$this->form_validation->set_rules('latitude','Latitude','trim|required|min_length[5]');
+			$this->form_validation->set_rules('longitude','Longitude','trim|required|min_length[5]');
+			$this->form_validation->set_rules('titulo_foto','Titulo da foto','trim|required|min_length[10]');
+			$this->form_validation->set_rules('titulo_foto','Titulo da foto','trim|required|min_length[10]');
+			$this->form_validation->set_rules('descricao','Descrição','trim|required|min_length[100]');
+			$this->form_validation->set_rules('titulo_google','Titulo do Google','trim|required|min_length[20]');
+			$this->form_validation->set_rules('titulo_facebook','Titulo do Facebook','trim|required|min_length[20]');
+			$this->form_validation->set_rules('descricao_google','Descrição do Google','trim|required|min_length[40]');
+			$this->form_validation->set_rules('descricao_facebook','Descrição do Facebook','trim|required|min_length[40]');
+
 			
 			// verifica a validação
 			if($this->form_validation->run() == FALSE){
@@ -112,7 +126,14 @@ class Local extends CI_Controller {
 					set_msg('validação ok','success');
 				}	
 			}else{
-
+				foreach ($_FILES as $key => $arquivo) {
+					$data[$key] = base_url().'assets/upload/'.$arquivo['name'];
+					move_uploaded_file ( $arquivo['tmp_name'] , BASE_DIR.'assets/upload/'.$arquivo['name']);
+				}
+				
+				unset($data['files']);
+				$data['data_cadastro'] = date('Y-m-d');
+				$data['idusuario'] = $this->session->userdata('id');
 				if($this->local_model->alterar_local($data,$id)){
 					
 					set_msg('Local alterado com sucesso','success');
