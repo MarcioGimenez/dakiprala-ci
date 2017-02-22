@@ -63,7 +63,7 @@ class Local extends CI_Controller {
 			}else{
 				foreach ($_FILES as $key => $arquivo) {
 					$data[$key] = base_url().'assets/upload/'.$arquivo['name'];
-					move_uploaded_file ( $arquivo['tmp_name'] , $_SERVER['DOCUMENT_ROOT'].'/dakiprala-ci/assets/upload/'.$arquivo['name']);
+					move_uploaded_file ( $arquivo['tmp_name'] , BASE_DIR.'assets/upload/'.$arquivo['name']);
 				}
 				
 				unset($data['files']);

@@ -25,6 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $config['base_url'] = 'http://localhost/dakiprala-ci';
 
+define('BASE_DIR', $_SERVER['DOCUMENT_ROOT'].'/dakiprala-ci/'); 
 /*
 |--------------------------------------------------------------------------
 | Index File
