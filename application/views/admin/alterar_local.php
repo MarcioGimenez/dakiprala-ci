@@ -53,12 +53,14 @@
                              <div class="form-group">
                                   <label for="foto_quadrada">Foto Quadrada:</label>
                                   <input id="foto_quadrada" name="foto_quadrada" type="file" multiple class="file-loading">
+                                  <input type="hidden" name="foto_quadrada_old"  value="<?=$local[0]->foto_quadrada?>">
                             </div>
                       </div>
                       <div class="col-md-5">  
                            <div class="form-group">
                                 <label for="foto_retangular">Foto Retangular:</label>
                                 <input id="foto_retangular" name="foto_retangular" type="file" multiple class="file-loading">
+                                <input type="hidden" name="foto_retangular_old"  value="<?=$local[0]->foto_retangular?>">
                           </div>
                     </div>
                     <div class="col-md-4">
@@ -106,7 +108,8 @@
       <div class="col-md-3">  
            <div class="form-group">
                 <label for="foto_facebook">Foto Facebook:</label>
-                <input id="foto_facebook" name="foto_facebook" type="file" multiple class="file-loading">
+                <input id="foto_facebook" name="foto_facebook" type="file" multiple class="file-loading" >
+                <input type="hidden" name="foto_facebook_old"  value="<?=$local[0]->foto_facebook?>">
           </div>
     </div>
 </div>

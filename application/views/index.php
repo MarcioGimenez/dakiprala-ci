@@ -46,6 +46,7 @@
 			<section id="locais">
 				<div class="container locais text-center">
 					<?php 
+						if($estados){
 						foreach ($estados as $key => $estado) {
 					
 					?>
@@ -55,10 +56,10 @@
 							<img src="<?=$estado->foto_quadrada?>" width="200" height="130" />
 						</div>
 						<h2><?=$estado->titulo?></h2>
-						<p><?=strip_tags (substr($estado->descricao,0,100));?></p>
+						<p><?= substr(strip_tags($estado->descricao),0,70);?>...</p>
 					</div>
 
-					<?php } ?>
+					<?php } }?>
 					
 				
 				</div>

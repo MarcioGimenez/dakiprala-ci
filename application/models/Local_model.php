@@ -13,6 +13,7 @@ class Local_model extends CI_Model {
 		if($tipo){
 			$this->db->where('tipo',$tipo);
 		}
+		$this->db->where('status',1);
 		$query =$this->db->get('locais');
 		if($query->num_rows()!= 0){
 			return $query->result();
