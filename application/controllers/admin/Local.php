@@ -128,21 +128,22 @@ class Local extends CI_Controller {
 
                 if($_FILES['foto_quadrada']['name']!=''){
                     $data['foto_quadrada'] = base_url() . 'assets/upload/'.$_FILES['foto_quadrada']['name'];
-                    @move_uploaded_file($arquivo['tmp_name'], BASE_DIR . 'assets/upload/' .$_FILES['foto_quadrada']['name']);
+                    @move_uploaded_file($_FILES['foto_retangular']['tmp_name'], BASE_DIR . 'assets/upload/' .$_FILES['foto_quadrada']['name']);
                 }else{
                     $data['foto_quadrada'] =$this->input->post('foto_quadrada_old');
                 }
 
                     if($_FILES['foto_retangular']['name']!=''){
                     $data['foto_retangular'] = base_url() . 'assets/upload/'.$_FILES['foto_retangular']['name'];
-                    @move_uploaded_file($arquivo['tmp_name'], BASE_DIR . 'assets/upload/' .$_FILES['foto_retangular']['name']);
+                    @move_uploaded_file($_FILES['foto_retangular']['tmp_name'], BASE_DIR . 'assets/upload/' .$_FILES['foto_retangular']['name']);
+               
                 }else{
                     $data['foto_retangular'] =$this->input->post('foto_retangular_old');
                 }
 
                     if($_FILES['foto_facebook']['name']!=''){
                     $data['foto_facebook'] = base_url() . 'assets/upload/'.$_FILES['foto_facebook']['name'];
-                    @move_uploaded_file($arquivo['tmp_name'], BASE_DIR . 'assets/upload/' .$_FILES['foto_facebook']['name']);
+                    @move_uploaded_file($_FILES['foto_retangular']['tmp_name'], BASE_DIR . 'assets/upload/' .$_FILES['foto_facebook']['name']);
                 }else{
                     $data['foto_facebook'] =$this->input->post('foto_facebook_old');
                 }

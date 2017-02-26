@@ -14,19 +14,21 @@
 
 							<!-- Wrapper for slides -->
 							<div class="carousel-inner" role="listbox">
+					
+					<?php 
+						if($estados){
+						foreach ($estados as $key => $estado) {
+					
+					?>
 								<div class="item active">
-									<img src="https://res.cloudinary.com/startup-grind/image/upload/c_fill,f_auto,g_center,h_360,q_auto:good,w_1140/v1/softlayer0/80135C1/media/v1/AUTH_d0619b05-07fc-49f0-8249-da585ea45ce5/chapter_banners/s%C3%A3o_paulo_brazil.jpg" alt="...">
+									<img src="<?=$estado->foto_retangular?>" alt="<?=$estado->titulo_foto?>" class="img-responsive" widith="1092" height="364">
 									<div class="carousel-caption">
 
 									</div>
-								</div>
-								<div class="item">
-									<img src="https://res.cloudinary.com/startup-grind/image/upload/c_fill,f_auto,g_center,h_360,q_auto:good,w_1140/v1/softlayer0/80135C1/media/v1/AUTH_d0619b05-07fc-49f0-8249-da585ea45ce5/chapter_banners/rio_de_janeiro_brazil.jpg" alt="...">
-									<div class="carousel-caption">
-
+								
 									</div>
-								</div>
-
+								<?php }}?>
+								
 							</div>
 
 							<!-- Controls -->
