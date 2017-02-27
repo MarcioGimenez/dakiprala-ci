@@ -6,60 +6,25 @@
 <!-- inicio locais -->
 <section id="locais">
 	<div class="container locais text-center">
+	<?php 
+						if($locais){
+						foreach ($locais as $key => $local) {
+					
+					?>
+					
 		<div class="col-md-6 col-sm-6 col-xs-12 local">
+			<a href="<?=base_url().$local->tipo.'/'.urlSEO($local->titulo)?>">
 			<div class="foto col-md-5">
-				<img src="http://www.arycom.com/uploads/locais/contato_sp.jpg" class="img-responsive" />
+				<img src="<?=$local->foto_quadrada?>" alt="<?=$local->titulo_foto?>" class="img-responsive" />
 			</div>
 			<div class="col-md-7 descricao">
-				<h2>Rio de Janeiro</h2>
-				<p>Balela Balela Balela balela balela balela balela balela balela balela balela balela balela balela</p>
+				<h2><?=$local->titulo?></h2>
+				<p><?= substr(strip_tags($local->descricao),0,170);?>...</p>
 			</div>
+</a>		
 		</div>
-		<div class="col-md-6 col-sm-6 col-xs-12 local">
-			<div class="foto col-md-5">
-				<img src="http://www.pousadalagoaazul.net/turismo/1_juqueriquere2%5B1%5D.jpg" class="img-responsive" />
-			</div>
-			<div class="col-md-7 descricao">
-				<h2>Minas Gerais</h2>
-				<p>Balela Balela Balela balela balela balela balela balela balela balela balela balela balela balela</p>
-			</div>
-		</div>
-		<div class="col-md-6 col-sm-6 col-xs-12 local">
-			<div class="foto col-md-5">
-				<img src="http://www.arycom.com/uploads/locais/contato_sp.jpg" class="img-responsive" />
-			</div>
-			<div class="col-md-7 descricao">
-				<h2>Alagoas</h2>
-				<p>Balela Balela Balela balela balela balela balela balela balela balela balela balela balela balela</p>
-			</div>
-		</div>
-		<div class="col-md-6 col-sm-6 col-xs-12 local">
-			<div class="foto col-md-5">
-				<img src="http://www.pousadalagoaazul.net/turismo/1_juqueriquere2%5B1%5D.jpg" class="img-responsive" align="center" />
-			</div>
-			<div class="col-md-7 descricao">
-				<h2>São Paulo</h2>
-				<p>Balela Balela Balela balela balela balela balela balela balela balela balela balela balela balela</p>
-			</div>
-		</div>
-		<div class="col-md-6 col-sm-6 col-xs-12 local">
-			<div class="foto col-md-5">
-				<img src="http://www.arycom.com/uploads/locais/contato_sp.jpg" class="img-responsive" />
-			</div>
-			<div class="col-md-7 descricao">
-				<h2>Rio de Janeiro</h2>
-				<p>Balela Balela Balela balela balela balela balela balela balela balela balela balela balela balela</p>
-			</div>
-		</div>
-		<div class="col-md-6 col-sm-6 col-xs-12 local">
-			<div class="foto col-md-5">
-				<img src="http://www.arycom.com/uploads/locais/contato_sp.jpg" class="img-responsive" />
-			</div>
-			<div class="col-md-7 descricao">
-				<h2>Rio de Janeiro</h2>
-				<p>Balela Balela Balela balela balela balela balela balela balela balela balela balela balela balela</p>
-			</div>
-		</div>
+		
+<?php }} ?>
 		<div class="col-sm-12 text-center">
 
 			<nav aria-label="Page navigation">

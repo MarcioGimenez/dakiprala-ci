@@ -29,6 +29,7 @@ class Local extends CI_Controller {
         if ($_POST) {
 
             $data['titulo'] = $this->input->post('titulo');
+            $data['titulo_seo'] =urlSEO($this->input->post('titulo'));
             $data['tipo'] = $this->input->post('tipo');
             $data['status'] = $this->input->post('status');
             $data['latitude'] = $this->input->post('latitude');
@@ -92,6 +93,7 @@ class Local extends CI_Controller {
         if ($_POST) {
             // recupera dados POST
             $data['titulo'] = $this->input->post('titulo');
+            $data['titulo_seo'] =urlSEO($this->input->post('titulo'));
             $data['tipo'] = $this->input->post('tipo');
             $data['status'] = $this->input->post('status');
             $data['latitude'] = $this->input->post('latitude');

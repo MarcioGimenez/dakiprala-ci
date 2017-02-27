@@ -51,5 +51,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'welcome';
 $route['admin'] = 'admin/Dashboard';
+$route['estados'] = 'locais/get_locais/estado';
+$route['cidades'] = 'locais/get_locais/cidade';
+$route['bairros'] = 'locais/get_locais/bairro';
+$route['estabelecimentos'] = 'locais/get_locais/estabelecimento';
+$route['estado/(.+)'] = 'local/get_local/$1';
+$route['cidade/(.+)'] = 'local/get_local/$1';
+$route['bairro/(.+)'] = 'local/get_local/$1';
+$route['estabelecimento/(.+)'] = 'local/get_local/$1';
+
+
+$route['locais-populares'] = 'locais/get_locais_populares';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

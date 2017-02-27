@@ -1,3 +1,5 @@
+<?php if($local){ ?>
+
 <div class="container text-center">
 	<div class="ads-728-90">
 		<img src="http://www.cangerenoticias.com.br/wp-content/uploads/2016/06/Anuncio-728-x-90.png" class="img-responsive">
@@ -6,21 +8,17 @@
 <!-- inicio locais -->
 <section id="locais">
 	<div class="container local-descricao text-center">
-		<div class="text-center col-md-12 titulo-locais"><h1>São Paulo</h1> </div>
+		<div class="text-center col-md-12 titulo-locais"><h1><?=$local[0]->titulo?></h1> </div>
 		<div class="col-md-12 text-justify">
-			<img align="left" style="margin-right: 10px;" src="http://planetamap.com/img/bandeiras-principais/sao-paulo.gif" width="280" height="220">
-			Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.
-			Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.
-			Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.
-			Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.
-			Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.
-			Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.
+			<img align="left" style="margin-right: 10px;" src="<?=$local[0]->foto_quadrada?>"  alt="<?=$local[0]->titulo_foto?>" width="280" height="220">
+			<?=$local[0]->descricao?>
 		</div>
 
 	</div>
 
 </section>
 <!-- fim locais -->
+
 <!-- Mapa -->
 <section>
 	<div class="container">
@@ -110,3 +108,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANymLp_H22SNB0xI-xspvyR0BlqsuRYDw&callback=initMap"
 async defer></script>
 <!-- fim links proximos -->
+
+<?php }else{ ?>
+<h3 align="center">Desculpe, não encontramos este local cadastrado</h3>
+<?php } ?>

@@ -63,6 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		a {
 			cursor: pointer;  
 			text-decoration: none;
+			color: #939393;
 			-webkit-transition: 300ms;
 			-moz-transition: 300ms;
 			-o-transition: 300ms;
@@ -389,7 +390,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<header>
 		<div class="container">
 			<div class="row topo">
-				<div class="logo pull-left"><img src="<?=base_url()?>assets/img/logo.png"></div>
+				<div class="logo pull-left"><a href="<?=base_url()?>"><img src="<?=base_url()?>assets/img/logo.png"></a></div>
 				<div class="login pull-right">
 					<div class="sociais text-center">
 						<a href="#"><i class="fa fa-facebook-square fa-2x btn-social" aria-hidden="true"></i></a>
@@ -411,11 +412,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-left">                 
-							<li class="scroll active"><a href="#">Home</a></li>
-							<li class="scroll"><a href="#">LOCAIS POPULARES</a></li> 
-							<li class="scroll"><a href="#">DICAS E OPINIÕES</a></li>                     
-							<li class="scroll"><a href="#">COMIDA</a></li>
-							<li class="scroll"><a href="#">HOTÉIS E POUSADAS</a></li>       
+							<li class="scroll active"><a href="<?=base_url()?>">Home</a></li>
+							<li class="scroll"><a href="<?=base_url()?>locais-populares">LOCAIS POPULARES</a></li> 
+							<li class="scroll"><a href="<?=base_url()?>dicas-e-opinioes">DICAS E OPINIÕES</a></li>
+							<li class="scroll"><a href="<?=base_url()?>comidas">COMIDA</a></li>
+							<li class="scroll"><a href="<?=base_url()?>hoteis-e-pousadas">HOTÉIS E POUSADAS</a></li>       
 						</ul>
 						<div class="pull-right busca">
 

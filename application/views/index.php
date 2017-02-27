@@ -4,13 +4,6 @@
 				<div class="container slider">
 					<div class="col-md-12 text-center">
 						<div id="carousel-div" class="carousel slide" data-ride="carousel">
-							<!-- Indicators -->
-
-							<ol class="carousel-indicators" style="bottom: -30px !important;">
-								<li data-target="#carousel-div" data-slide-to="0" class="active" style="background-color: #000;"></li>
-								<li data-target="#carousel-div" data-slide-to="1" style="background-color: #000;"></li>
-
-							</ol>
 
 							<!-- Wrapper for slides -->
 							<div class="carousel-inner" role="listbox">
@@ -54,11 +47,13 @@
 					?>
 
 					<div class="col-md-3 col-sm-6 col-xs-12 local">
+					<a href="<?=base_url().$estado->tipo.'/'.urlSEO($estado->titulo)?>">
 						<div class="foto">
 							<img src="<?=$estado->foto_quadrada?>" width="200" height="130" />
 						</div>
 						<h2><?=$estado->titulo?></h2>
 						<p><?= substr(strip_tags($estado->descricao),0,70);?>...</p>
+						</a>
 					</div>
 
 					<?php } }?>
