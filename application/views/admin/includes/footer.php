@@ -16,9 +16,9 @@
 
 
         $(document).ready(function() {
-            $("#foto_quadrada").fileinput({showCaption: false,showUpload: true,language: 'pt',uploadUrl: "http://localhost/file-upload-single/1", uploadAsync: true});
-            $("#foto_retangular").fileinput({showCaption: false,showUpload: true,language: 'pt',uploadUrl: "http://localhost/file-upload-single/1", uploadAsync: true});
-            $("#foto_facebook").fileinput({showCaption: false,showUpload: true,language: 'pt',uploadUrl: "http://localhost/file-upload-single/1", uploadAsync: true});
+            $("#foto_quadrada").fileinput({showCaption: false,showUpload: true,language: 'pt',uploadUrl: "<?=base_url()?>admin/local/upload", uploadAsync: true});
+            $("#foto_retangular").fileinput({showCaption: false,showUpload: true,language: 'pt',uploadUrl: "<?=base_url()?>admin/local/upload", uploadAsync: true});
+            $("#foto_facebook").fileinput({showCaption: false,showUpload: true,language: 'pt',uploadUrl: "<?=base_url()?>admin/local/upload", uploadAsync: true});
 
           $('#summernote').summernote({
               height: 200,                 

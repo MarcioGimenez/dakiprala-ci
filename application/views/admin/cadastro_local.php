@@ -1,6 +1,6 @@
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-            	<div class="col-md-10">
+            	<div class="col-md-12">
             		<h1 class="page-header">Novo Local</h1>
             	</div>
 
@@ -49,27 +49,27 @@
                        </div>
                  </div>
                  <div class="row">
-                       <div class="col-md-3">  
+                       <div class="col-md-6">  
                              <div class="form-group">
                                   <label for="foto_quadrada">Foto Quadrada:</label>
                                   <input id="foto_quadrada" name="foto_quadrada" type="file" multiple class="file-loading">
                             </div>
                       </div>
-                      <div class="col-md-5">  
+                      <div class="col-md-6">  
                            <div class="form-group">
                                 <label for="foto_retangular">Foto Retangular:</label>
                                 <input id="foto_retangular" name="foto_retangular" type="file" multiple class="file-loading">
                           </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-8">
                         <div class="form-group">
                               <label for="titulo_foto">Titulo Foto:</label>
-                              <input type="text" class="form-control" id="titulo_foto" name="titulo_foto" placeholder="Digite o titulo da foto" required value="<?=(isset($titulo_foto))? $titulo_foto:''; ?>">
+                              <input type="text" class="form-control" id="titulo_foto" name="titulo_foto" placeholder="Digite o titulo" required value="<?=(isset($titulo_foto))? $titulo_foto:''; ?>">
                         </div>
                   </div>
             </div>
             <div class="row">
-                  <div class="col-md-8">
+                  <div class="col-md-12">
                   <textarea id="summernote" name="descricao"><?=(isset($descricao))? $descricao:''; ?></textarea>
                   </div>
             </div>
@@ -103,7 +103,7 @@
 
 </div>
 <div class="row">
-      <div class="col-md-3">  
+      <div class="col-md-8">  
            <div class="form-group">
                 <label for="foto_facebook">Foto Facebook:</label>
                 <input id="foto_facebook" name="foto_facebook" type="file" multiple class="file-loading">
