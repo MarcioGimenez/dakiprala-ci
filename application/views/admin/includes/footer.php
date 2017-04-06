@@ -15,23 +15,55 @@
     <script type="text/javascript">
 
 
-        $(document).ready(function() {
-            $("#foto_quadrada").fileinput({showCaption: false,showUpload: true,language: 'pt',uploadUrl: "<?=base_url()?>admin/local/upload", uploadAsync: true});
-            $("#foto_retangular").fileinput({showCaption: false,showUpload: true,language: 'pt',uploadUrl: "<?=base_url()?>admin/local/upload", uploadAsync: true});
-            $("#foto_facebook").fileinput({showCaption: false,showUpload: true,language: 'pt',uploadUrl: "<?=base_url()?>admin/local/upload", uploadAsync: true});
+      $(document).ready(function() {
 
-          $('#summernote').summernote({
-              height: 200,                 
-              minHeight: null,             
-              maxHeight: null,             
-              focus: true                  
-          });
-          $('.summernote').each( function() {
-              $(this).val($(this).code());
-          });
+        setTimeout(function() {
+         var id_local = $("#id_cadastro").val();
+         $("#foto_quadrada").fileinput({
+          showCaption: false,
+          showUpload: true,
+          language: 'pt',
+          uploadUrl: "<?=base_url()?>admin/local/upload/"+id_local, 
+          uploadAsync: true,
+          allowedFileExtensions: ["jpg", "png", "gif"],
+          maxImageWidth: 250, maxImageHeight: 150,maxFileCount:1
+        });
+         $("#foto_retangular").fileinput({
+          showCaption: false,
+          showUpload: true,
+          language: 'pt',
+          uploadUrl: "<?=base_url()?>admin/local/upload/"+id_local, 
+          uploadAsync: true,
+          allowedFileExtensions: ["jpg", "png", "gif"],
+          maxImageWidth: 1200, maxImageHeight: 450,maxFileCount: 1
+        });
+         $("#foto_facebook").fileinput({
+          showCaption: false,
+          showUpload: true,
+          language: 'pt',
+          uploadUrl: "<?=base_url()?>admin/local/upload/"+id_local, 
+          uploadAsync: true,
+          allowedFileExtensions: ["jpg", "png", "gif"],
+          maxFileCount: 1
+        });
+         //.on("filebatchselected", function(event, files) {
+          //$("#foto_facebook").fileinput("upload");
+        //});
+
+      }, 2000);
+        
+        $('#summernote').summernote({
+          height: 200,                 
+          minHeight: null,             
+          maxHeight: null,             
+          focus: true                  
+        });
+        $('.summernote').each( function() {
+          $(this).val($(this).code());
+        });
       });
 
 
-  </script>
-</body>
-</html>
+    </script>
+  </body>
+  </html>

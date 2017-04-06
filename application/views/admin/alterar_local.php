@@ -117,6 +117,7 @@
 <button type="submit" class="btn btn-success"> Enviar </button>
 <button type="reset" class="btn btn-default"> Cancelar </button>
 </form>
+<input type="hidden" id="id_cadastro" value="<?=$local[0]->id?>" />
 </div>
 
 

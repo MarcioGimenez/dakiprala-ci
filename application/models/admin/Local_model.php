@@ -20,7 +20,7 @@ class Local_model extends CI_Model {
 
 	public function cadastra_local($data){
 		if($this->db->insert('locais',$data)){
-			return true;
+			return $this->db->insert_id();
 		}else{
 			return false;
 		}
